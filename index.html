@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text area</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+
+        }
+
+        h2 {
+            margin-bottom: 30px;
+            color: black;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 15px;
+            border: solid black 2px;
+            font-size: 20px;
+            resize: none;
+        }
+
+        .counter {
+            margin-top: 10px;
+            font-size: 15px;
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h2>Message(max 200 character)</h2>
+        <textarea maxlength="200" id="message" placeholder="Type your Message..."></textarea>
+        <div class="counter" id="charcount">
+            <p>0/200 characters</p>
+        </div>
+    </div>
+
+
+    <script>
+        const message=document.getElementById("message")
+        const charcount=document.getElementById("charcount")
+
+        message.addEventListener("input",()=>{
+            const length=message.value.length;
+            charcount.textContent=`${length}/200 characters`;
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>
